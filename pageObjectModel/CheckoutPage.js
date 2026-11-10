@@ -2,13 +2,13 @@ const BasePage = require('./BasePage');
 
 class CheckoutPage extends BasePage {
   async fillInformation(information) {
-    await this.page.locator('[data-test="firstName"]').fill(information.firstName);
-    await this.page.locator('[data-test="lastName"]').fill(information.lastName);
-    await this.page.locator('[data-test="postalCode"]').fill(information.postalCode);
+    await this.page.getByPlaceholder('First Name').fill(information.firstName);
+    await this.page.getByPlaceholder('Last Name').fill(information.lastName);
+    await this.page.getByPlaceholder('Zip/Postal Code').fill(information.postalCode);
   }
 
   async continueToOverview() {
-    await this.page.locator('[data-test="continue"]').click();
+    await this.page.getByRole('button', { name: 'Continue' }).click();
   }
 }
 

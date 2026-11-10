@@ -7,7 +7,7 @@ class LoginPage extends BasePage {
 
   async login(username, password) {
     await this.page.getByLabel('Username').fill(username);
-    await this.page.locator('#password').fill(password);
+    await this.page.getByPlaceholder('Password').fill(password);
     await this.page.getByRole('button', { name: 'Login' }).click();
   }
 }

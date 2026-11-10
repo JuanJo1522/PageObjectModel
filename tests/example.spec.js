@@ -3,7 +3,6 @@ const PageFactory = require('../utilities/factory/PageFactory');
 const CheckoutInformationBuilder = require('../utilities/builder/CheckoutInformationBuilder');
 
 test('completes a purchase using page objects, factory, and builder', async ({ page }) => {
-  test.setTimeout(120000);
 
   const pages = new PageFactory(page);
   const checkoutInformation = new CheckoutInformationBuilder()

@@ -2,7 +2,7 @@ const BasePage = require('./BasePage');
 
 class CheckoutOverviewPage extends BasePage {
   async finishOrder() {
-    await this.page.locator('[data-test="finish"]').click();
+    await this.page.getByRole('button', { name: 'Finish' }).click();
   }
 
   confirmationMessage() {
